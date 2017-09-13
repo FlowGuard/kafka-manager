@@ -12,11 +12,12 @@ RUN mkdir -p /tmp && \
     echo 'scalacOptions ++= Seq("-Xmax-classfile-name", "200")' >> build.sbt && \
     ./sbt clean dist && \
     unzip  -d / ./target/universal/kafka-manager-${KAFKA_MANAGER_VERSION}.zip && \
+    mv /kafka-manager-${KAFKA_MANAGER_VERSION} /kafka-manager && \
     rm -fr /tmp/* /root/.sbt /root/.ivy2
 
 EXPOSE 9000
 
-VOLUME /kafka-manager-${KAFKA_MANAGER_VERSION}/conf
+VOLUME /kafka-manager/conf
 
-WORKDIR /kafka-manager-${KAFKA_MANAGER_VERSION}
+WORKDIR /kafka-manager
 CMD bin/kafka-manager
