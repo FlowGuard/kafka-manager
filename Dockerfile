@@ -20,4 +20,4 @@ EXPOSE 9000
 VOLUME /kafka-manager/conf
 
 WORKDIR /kafka-manager
-CMD bin/kafka-manager
+CMD rm RUNNING_PID; bin/kafka-manager
