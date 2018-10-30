@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 
 LABEL maintainer="jaroslav.barton@comsource.cz"
 
-ENV KAFKA_MANAGER_VERSION 1.3.3.13
+ENV KAFKA_MANAGER_VERSION 1.3.3.18
 
 RUN mkdir -p /tmp && \
     cd /tmp && \
